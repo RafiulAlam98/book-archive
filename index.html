@@ -16,6 +16,8 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js"
     integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/"
     crossorigin="anonymous"></script>
+  <!-- Css stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -31,8 +33,15 @@
 
   <!-- main section starts -->
   <main>
+    <div id="spinner" class="w-25 mx-auto ">
+      <strong class="me-3">Loading...</strong>
+      <div class="spinner-border ms-auto" role="status" aria-hidden="true"></div>
+    </div>
     <div id="div-container" class="row row-cols-1 row-cols-md-3 g-4">
 
+    </div>
+    <div id="error-handle">
+      No Book Item Found in the API. Please search a valid name or
     </div>
   </main>
 

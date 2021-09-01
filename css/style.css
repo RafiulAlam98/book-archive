@@ -1,0 +1,9 @@
+/* displaying spinner */
+#spinner{
+  display: none;
+}
+
+/*display error message */
+#error-handle{
+  display: none;
+}
