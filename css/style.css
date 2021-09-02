@@ -2,6 +2,7 @@
 body{
   background-color: ghostwhite;
 }
+
 /* displaying spinner */
 #spinner{
   display: none;
@@ -12,6 +13,7 @@ body{
   display: none;
 }
 
+/* Adding header title color */
 .color{
   color:darkcyan ;
 }

@@ -1,11 +1,11 @@
 /* load data from API  */
 const loadData = data => {
 
-   // input field created
+   /* input field created */
   const inputField = document.getElementById('input-field')
   const inputValue = inputField.value
 
-  // clear input 
+  /* clear input  */
   inputField.value = ''
 
   displaySpinner('block')
@@ -14,9 +14,8 @@ const loadData = data => {
   const url =`http://openlibrary.org/search.json?q=${inputValue}`;
   fetch(url)
   .then(res => res.json())
-  .then(data => loadUser(data.docs))
+  .then(data => loadBooks(data.numFound,data.docs))
 }
-
 
 /* spinner handling */
 const displaySpinner = displayStyle =>{
@@ -28,8 +27,11 @@ const displayErrorMessage = displayStyle =>{
   document.getElementById("error-handle").style.display = displayStyle;
 }
 
-/* User Loaded */
-const loadUser = books =>{
+
+/* Books Loaded */
+const loadBooks = (result,books) =>{
+  const resultFound = document.getElementById('result');
+  const res = resultFound.innerText = `${result} result found`;
   const divContainer = document.getElementById('div-container')
   divContainer.textContent = ''
   if(books.length === 0){
@@ -39,18 +41,18 @@ const loadUser = books =>{
     const div = document.createElement('div')
     div.classList.add('col')
     div.innerHTML = `
-        <div class="card">
+        <div class="card p-4">
           <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="img-fluid rounded "  alt="...">
           <div class="card-body">
-            <h5 class="card-title">Name: ${book.title}</h5></h5>
-            <h5 class="card-title">
+            <h5 class="card-title fs-4">Name: ${book.title}</h5></h5>
+            <p class="card-text text-lg-start">
               Author: ${book.author_name ? book.author_name[0]: '' }
-            </h5>
-            <p class="card-text">
+            </p>
+            <p class="card-text text-lg-start">
               Publisher: ${book.publisher ? book.publisher[0]: ''}
             </p>
-            <p class="card-text">
-              Date Of Publish: ${book.publish_date ? book.publish_date[0]: ''}
+            <p class="card-text text-lg-start">
+              Date Of Publish: ${book.first_publish_year ? book.first_publish_year: ''}
             </p>
           </div>
         </div>
