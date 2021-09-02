@@ -30,8 +30,8 @@ const displayErrorMessage = displayStyle =>{
 
 /* Books Loaded */
 const loadBooks = (result,books) =>{
-  // const resultFound = document.getElementById('result');
-  // resultFound.innerText = `${result} result found`;
+  const resultFound = document.getElementById('result');
+  resultFound.innerText = `${result} result found`;
   const divContainer = document.getElementById('div-container')
   divContainer.textContent = ''
   if(books.length === 0){
