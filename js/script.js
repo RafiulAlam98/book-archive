@@ -42,7 +42,8 @@ const loadBooks = (result,books) =>{
     div.classList.add('col')
     div.innerHTML = `
         <div class="card p-4">
-          <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="img-fluid rounded "  alt="...">
+          <img src="https://covers.openlibrary.org/b/id/%7B
+            ${book.cover_i}%7D-M.jpg" class="img-fluid rounded "  alt="...">
           <div class="card-body">
             <h5 class="card-title fs-4">Name: ${book.title}</h5></h5>
             <p class="card-text text-lg-start">
