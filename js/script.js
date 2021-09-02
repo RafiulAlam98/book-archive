@@ -39,9 +39,9 @@ const loadBooks = (result,books) =>{
   }
   books?.forEach(book => {
     const div = document.createElement('div')
-    div.classList.add('col')
+    div.classList.add('col','d-flex','justify-content-center')
     div.innerHTML = `
-        <div class="card p-4">
+        <div class="card p-2" style="width: 18rem;">
           <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="img-fluid rounded"  alt="...">
           <div class="card-body">
             <h5 class="card-title fs-4">Name: ${book.title}</h5></h5>
